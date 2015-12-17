@@ -11,14 +11,14 @@ from datetime import date, timedelta
 from datetime import datetime
 
 def cities(request):
-    data = requests.get('http://127.0.0.1:8000/patients/cities/').json()
+    data = requests.get('http://djangoapi.herokuapp.com/patients/cities/').json()
     context = RequestContext(request, {
         'cities': data['results'],'count': data['count'],
     }) 
     return render_to_response('taskmanager/cities.html', context)
 
 def personlist(request, id):
-    data = requests.get('http://127.0.0.1:8000/patients/cities/' + id + '/persons/').json()
+    data = requests.get('http://djangoapi.herokuapp.com/patients/cities/' + id + '/persons/').json()
     context = RequestContext(request, {
         'persons': data['results'],'count': data['count'],'city': data['results'][0]['id'],'city_name': data['results'][0]['city']['city_name'],
     })
@@ -26,7 +26,7 @@ def personlist(request, id):
     return render_to_response('taskmanager/persons.html', context)
 
 def person_details(request, id):
-    data = requests.get('http://127.0.0.1:8000/patients/person/' + id).json()
+    data = requests.get('http://djangoapi.herokuapp.com/patients/person/' + id).json()
     context = RequestContext(request, {
         'city': data['city'],'name': data['name'],'title': data['title'],'address': data['address'],'test_set': data['test_set'],
     })
