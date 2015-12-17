@@ -15,7 +15,7 @@ from django.conf import settings
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*)8abrhs_cpi@6i^lu2bb&iorl0+8!*(^sv4=h7^tz)m7wh*pq'
+SECRET_KEY = 'capitulate'
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -85,15 +85,15 @@ WSGI_APPLICATION = 'healthcare.wsgi.application'
 import dj_database_url
 DATABASES = {
 	'default': {
-	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-	'NAME': 'daa27569ll8oaq',
-	'USER': 'ydhrhhdlajpych',
-	'PASSWORD': '-Eygc2Xr-rn07ZoiqcGyqH1clM',
-	'HOST': 'ec2-54-235-134-167.compute-1.amazonaws.com',
+	'ENGINE': *,
+	'NAME': *,
+	'USER': *,
+	'PASSWORD': *,
+	'HOST': *,
 	'PORT': '5432',
 	}
 }
-DATABASE_URL = 'postgres://ydhrhhdlajpych:-Eygc2Xr-rn07ZoiqcGyqH1clM@ec2-54-235-134-167.compute-1.amazonaws.com:5432/daa27569ll8oaq'
+DATABASE_URL = *
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
