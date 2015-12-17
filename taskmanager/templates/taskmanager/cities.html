@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block names %}
+{%if count%}
+<h3 class="head">Total number of Cities: {{count}}</h3>
+{% endif %}
+
+{% for city in cities %}
+    <a class="underline" href="{% url 'persons_list' city.id %}"><h3 class="head">{{city.city_name}}</h3></a>
+{% endfor %}
+{% endblock %}

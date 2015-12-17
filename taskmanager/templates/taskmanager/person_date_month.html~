@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block names4 %}
+{{count}}
+{% for test in test_list %}
+ <p>{{test.person}}</p>
+{% endfor %}
+
+
+{% endblock %}

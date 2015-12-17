@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block names2 %}
+<form action="{% url 'persons_by_date' city %}" method="GET">
+    {% csrf_token %}
+<input id="month" type="text" name="month" value="12">
+<input id="year" type="text" name="year" value="2015">
+<input type="submit" value="Submit" />
+</form>
+
+
+
+
+
+
+
+{%if count%}
+<p>{{count}}</p>
+{% endif %}
+{% for person in persons %}
+    <a href="{% url 'person_detail' person.id %}"><p>{{person.name}}</p></a> 
+{% endfor %}
+{% endblock %}

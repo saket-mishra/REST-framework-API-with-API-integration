@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "jana.css" %}">
+</head>
+<body>
+<div class="jana-header"><div class="centreText">
+<div>Jana Care</div></div></div>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="{%url 'persons_by_month_list'  %}">Patients This Month</a></li>
+  <li><a href="{%url 'persons_by_week_list'  %}">Patients This Week</a></li>
+  <li><a href="{%url 'persons_by_day_list'  %}">Patients Today</a></li>
+</ul>
+
+{% block names %}{% endblock %}
+{% block names2 %}{% endblock %}
+{% block names3 %}{% endblock %}
+{% block names4 %}{% endblock %}
+{% block names5 %}{% endblock %}
+{% block names6 %}{% endblock %}
+</body>
+</html>

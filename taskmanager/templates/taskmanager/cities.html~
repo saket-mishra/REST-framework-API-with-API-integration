@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% block names %}
+{% for city in cities %}
+    <a href="{% url 'persons_list' city.id %}"><p>{{city.city_name}}</p></a>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block names4 %}
+{{count}}
+
+{% for test in test_list %}
+ 
+ {{test.test_person}}
+{% endfor %}
+
+
+
+
+{% endblock %}

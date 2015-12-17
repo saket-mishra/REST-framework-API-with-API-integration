@@ -1,0 +1,5 @@
+from django import forms
+
+
+month = forms.CharField(max_length=2)
+year = forms.CharField(max_length=4)

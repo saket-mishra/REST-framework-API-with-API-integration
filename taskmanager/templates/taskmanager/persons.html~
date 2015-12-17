@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block names2 %}
+
+{%if count%}
+<p>{{count}}</p>
+{% endif %}
+{% for person in persons %}
+    <a href="{% url 'person_detail' person.id %}"><p>{{person.name}}</p></a> 
+{% endfor %}
+{% endblock %}

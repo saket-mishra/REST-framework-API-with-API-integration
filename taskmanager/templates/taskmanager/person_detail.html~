@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block names3 %}
+<p>{{title}}{{name}}</p>
+<p>{{city.city_name}}</p>
+<p>{{address}}</p>
+
+<table>
+    <tr>
+    <th>Test</th>
+    <th>Glucose</th>
+    <th>HBA1C</th>
+    <th>RBC</th>
+    <th>WBC</th>
+    <th>RBC</th>
+    </tr>
+{% for test in test_set %}
+    <tr>
+        <td>{{ test.test_name }}</td>
+        <td>{{ test.glucose }}</td>
+        <td>{{ test.hba1c }}</td>
+	<td>{{ test.rbc }}</td>
+	<td>{{ test.wbc }}</td>
+        <td>{{ test.date }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block names4 %}
+<h3 class="head">Total number of tests this month: {{count}}</h3>
+<h5 class="head"style="text-decoration:underline;">people who took the test this month:</h5>
+<div class="container">
+<div class="details">	
+{% for test in test_list %}
+	<div class="block"><a href="{% url 'person_detail' test.person.id %}"><span class="pull-left">{{test.person}}</span><span class="pull-right">{{test.person.city}}</span></a></div>
+{% endfor %}
+</div>	
+</div>
+
+{% endblock %}

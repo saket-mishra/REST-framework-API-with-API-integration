@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block names2 %}
+
+{%if count%}
+<h3 class="head">Total number of patients in {{city_name}}: {{count}}<h3>
+{% endif %}
+<div class="container">
+<div class="details">	
+{% for person in persons %}
+   <div class="block"><a class="underline" href="{% url 'person_detail' person.id %}"><span class="pull-left">{{person.title}} {{person.name}}</span><span class="pull-right">{{person.address}}</span></a></div> 
+{% endfor %}
+    </div>
+    </div>
+{% endblock %}

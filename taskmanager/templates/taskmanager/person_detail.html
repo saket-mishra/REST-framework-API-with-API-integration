@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block names3 %}
+<div class="container">
+<div class = "detail">
+<h4 class="head-detail">Patient Name: {{title}} {{name}}</h4>
+<h4 class="head-detail">City: {{city.city_name}}</h4>
+<h4 class="head-detail">Address: {{address}}</h4>
+</div>    
+<div class="test-detail">    
+<table>
+    <tr>
+    <th>Test</th>
+    <th>Glucose</th>
+    <th>HBA1C</th>
+    <th>RBC</th>
+    <th>WBC</th>
+    <th>Test Date</th>
+    </tr>
+{% for test in test_set %}
+    <tr>
+        <td>{{ test.test_name }}</td>
+        <td>{{ test.glucose }}</td>
+        <td>{{ test.hba1c }}</td>
+	<td>{{ test.rbc }}</td>
+	<td>{{ test.wbc }}</td>
+        <td>{{ test.date }}</td>
+    </tr>
+{% endfor %}
+</table>
+    </div>    
+</div>
+{% endblock %}
