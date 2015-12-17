@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="{% static "static/jana.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "jana.css" %}">
 </head>
 <body>
 <div class="jana-header"><div class="centreText">

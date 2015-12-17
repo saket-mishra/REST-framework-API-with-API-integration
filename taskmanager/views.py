@@ -9,6 +9,7 @@ from django import template
 from patients.models import Person
 from datetime import date, timedelta
 from datetime import datetime
+from django.conf import settings
 
 def cities(request):
     data = requests.get('http://djangoapi.herokuapp.com/patients/cities/').json()
@@ -27,8 +28,12 @@ def personlist(request, id):
 
 def person_details(request, id):
     data = requests.get('http://djangoapi.herokuapp.com/patients/person/' + id).json()
+    k = data['test_set']
+    for ker in k:
+        time = ker['date']
+    t = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%f")
     context = RequestContext(request, {
-        'city': data['city'],'name': data['name'],'title': data['title'],'address': data['address'],'test_set': data['test_set'],
+        'city': data['city'],'name': data['name'],'title': data['title'],'address': data['address'],'test_set': data['test_set'],'time':t,
     })
     return render_to_response('taskmanager/person_detail.html', context)
 
